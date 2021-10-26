@@ -28,6 +28,7 @@ const Home: NextPage = () => {
         margin: 0 ;
         padding: 0;
         boxSizing:border-box;
+        
       }
     `}</style>
       {animation()}
