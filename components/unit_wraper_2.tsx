@@ -10,26 +10,26 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 const useStyles = makeStyles({
     carrousel: {
         width: '100%',
-        height: '12rem',
-        backgroundColor: 'black',
+        height: '60rem',
+        backgroundColor: 'white',
         background: 'rgba(0,0,0,.5)',
         '@media (max-width:991px)' : {
-        height: '100%',
+        height: '20rem',
         },
     },
     carrouselInner: {
         height: '100%',
         width: '100%',
-        backgroundPosition: 'center',
+        backgroundPosition: '50% center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         display: 'flex',
-        boxShadow: ' 2px 2px 2px 1px rgba(0, 0, 0, 0.2)',
+        backgroundColor: 'white',
     },
     left: {
         flex: '5%',
         height: '100%',
-        backgroundColor: 'rgb(0, 0, 0, 0.6)',
+        backgroundColor: 'white',
         display: 'grid',
         placeItems: 'center',
         color: 'white',
@@ -53,7 +53,7 @@ export default function Wrapper_2() {
                         currImg > 0 && setCurrImg(currImg - 1);
                     }}
                 >
-                    <ArrowBackIosIcon style={{ fontSize: 50 }} />
+                    <ArrowBackIosIcon style={{ fontSize: 50, color:'black' }} />
                 </div>
                 <Image src={images[currImg].img} className={classes.carrouselInner} />
                 <div
@@ -62,7 +62,7 @@ export default function Wrapper_2() {
                         currImg < images.length - 1 && setCurrImg(currImg + 1);
                     }}
                 >
-                    <ArrowForwardIosIcon style={{ fontSize: 50 }} />
+                    <ArrowForwardIosIcon style={{ fontSize: 50 , color: 'black' ,   }} />
                 </div>
             </div>
         </div>

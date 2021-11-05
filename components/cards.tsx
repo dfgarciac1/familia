@@ -7,6 +7,7 @@ const useStyles = makeStyles({
        display: 'flex',
        float: 'left',
        width: '25%',
+       justifyContent : 'center',
        padding: '10px 30px',
     },
     row:{
@@ -19,23 +20,69 @@ const useStyles = makeStyles({
     },
     card: {
         boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)',
-        padding: '126px',
+        padding: '3em',
+        borderRadius:'1em',
+        transform:'perspective(500px)',
+        transformStyle:'preserve-3d',
         textAlign: 'center',
-        backgroundColor: '#C0BCFC'
+        backgroundColor: '#C0BCFC',
+        '&:hover': {
+          transform: 'perspective(400px) rotateY(45deg)',
+         
+        },
   },
   card1: {
     boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)',
-    padding: '126px',
     textAlign: 'center',
     color : 'white',
-    backgroundColor: '#221E20'
+    backgroundColor: '#221E20',
+    padding: '2em',
+        borderRadius:'1em',
+        transform:'perspective(500px)',
+        transformStyle:'preserve-3d',
+        '&:hover': {
+          transform: 'perspective(400px) rotateY(45deg)',
+         
+        },
 },
 card2: {
   boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)',
-  padding: '126px',
   textAlign: 'center',
-  backgroundColor: '#BDF5CE'
+  backgroundColor: '#929292',
+  padding: '2em',
+  borderRadius:'1em',
+  transform:'perspective(500px)',
+  transformStyle:'preserve-3d',
+  '&:hover': {
+    transform: 'perspective(400px) rotateY(45deg)',
+   
+  },
 },
+a:{
+   textDecoration:'none',
+    margin: '16px',
+    fontSize: '26px',
+    color: 'white',
+    textTransform: 'uppercase',
+    position: 'relative',
+    '&::before' : {
+      content: 'attr(data-item)',
+      transition: 'all 1s ease-in-out',
+      color: '#B25454',
+      position: 'absolute',
+      top: '0',
+      bottom: '0',
+      left: '5px',
+      right: '0',
+      width: '0',
+      overflow: 'hidden',
+    },
+    '&:hover': {
+     '&::before' :{
+        width: '100%',
+      }
+    }
+  },
   });
   
 export default function cards  (){
@@ -43,14 +90,20 @@ const classes = useStyles();
 return(
 <div className={classes.row} >
   <div className={classes.column}>
-    <div className={classes.card}>1 Paso</div>
+    <div className={classes.card}>
+      <li><a  className={classes.a} href='#' data-item=''>Home</a></li>
+    </div>
   </div>
 
   <div className={classes.column}>
-    <div className={classes.card1}> 2 Paso </div>
+    <div className={classes.card1}> 
+    <li><a  className={classes.a} href='#' data-item=''>Hombres</a></li>
+     </div>
   </div>
   <div className={classes.column}>
-    <div className={classes.card2}>3 Paso</div>
+    <div className={classes.card2}>
+    <li><a className={classes.a} href='#' data-item=''>Mujeres</a></li>
+    </div>
   </div>
 
 </div>

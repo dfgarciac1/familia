@@ -1,5 +1,5 @@
 import  a from '../images/a.jpg'
-import b from '../images/city.jpg'
+import b from '../images/Group 1.svg'
 
 export const images =
 [

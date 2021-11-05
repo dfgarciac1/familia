@@ -1,15 +1,25 @@
 
 import { makeStyles }from '@mui/styles'
-import { borderRadius, padding } from '@mui/system';
-
+import { borderRadius, letterSpacing, padding } from '@mui/system';
+import Cards from './cards';
 
 const useStyles = makeStyles({
     root: {
-       display: 'flex',
-       backgroundColor:'white',
        margin :'0',
        padding:'0',
        boxSizing:'border-box',
+       textAlign: 'center',
+       display: 'flex',
+       flexDirection: 'column',
+       justifyContent: 'center',
+       alignItems: 'center',
+       position: 'relative',
+       minHeight: '100vh',
+       fontFamily: 'Hack, monospace',
+
+    },
+    div:{
+        color:' #727272',
     },
     nav:{
         margin: '25px',
@@ -28,49 +38,55 @@ const useStyles = makeStyles({
   li :{
        margin :'10px',
        flexDirection: 'row',
-       border: '2px solid transparent',
-       borderRadius: '5px',
-       marginLeft : '20px',
-       transition: 'background 0.2s',
+       borderRadius:'100px',
+       paddingLeft:'8px',
+
+       position: 'relative',
+       paddingBottom:'8px'
   },
-  a:{
-     textDecoration:'none',
-     color : '#010001',
-     borderRadius:'20px',
-     padding: '6px 15px',
-     fontSize:'17px',
-     fontFamily:'Roboto Mono, monospace',
-     '&:hover':{
-         color: '#D527D5'
-     }
-     
+  Sharat:{
+    margin: '16px',
+    fontSize: '96px',
+    color: '#ccc',
+    textTransform: 'uppercase',
+    transition: 'all 1s ease-in-out',
+    position: 'relative',
+    '&::before' : {
+      content: 'attr(data-item)',
+      transition: 'all 1s ease-in-out',
+      color: '#8254ff',
+      position: 'absolute',
+      top: '0',
+      bottom: '0',
+      left: '0',
+      right: '0',
+      width: '0',
+      overflow: 'hidden',
+    },
+  
+    '&:hover': {
+     '&::before' :{
+        width: '100%',
+      }
+    }
   },
-  });
+    });
   
 export default function NavBar() {
     const classes = useStyles();
 
     return (
         <div  className={classes.root}>
-            <nav className={classes.nav}>
-                <ul className={classes.menuItems}> 
-                        <li className ={classes.li}>
-                        <a  href= '#' className = {classes.a} data-item='Camisetas'> 
-                          Hombres 
-                        </a>
-                        </li>
-                        <li className ={classes.li}>
-                        <a  href= '#' className = {classes.a} data-item='Camisetas'> 
-                             Mujeres 
-                        </a>
-                        </li>
-                        <li className ={classes.li}>
-                        <a  href= '#' className = {classes.a} data-item='Camisetas'> 
-                        Niños                        </a>
-                        </li>
-                    
-                </ul>
-            </nav>
+            <p  data-item='Sharat' className={classes.Sharat}>Sharat</p>
+
+           <section>
+  <nav>
+    <ul className="nav navbarmenuItems">
+     {Cards()}
+    </ul>
+  </nav>
+
+</section>
         </div>
     )
 

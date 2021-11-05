@@ -1,13 +1,13 @@
 import type { NextPage } from 'next'
 import NavBar from '../components/nav_bar'
-import Wrapper_2 from '../components/unit_wraper_2'
+import Products from '../components/products'
 import cards from '../components/cards'
 import animation from '../components/animation'
 import { makeStyles }from '@mui/styles'
 const useStyles = makeStyles({
   row:{
-      backgroundColor:'black',
-      margin: '0 ',
+    background: ' white',
+    margin: '0 ',
       padding: '0',
       boxSizing:'border-box',
       
@@ -31,7 +31,9 @@ const Home: NextPage = () => {
         
       }
     `}</style>
-      {animation()}
+
+      {NavBar()}
+      {Products()}
     </div>
   )
 }
