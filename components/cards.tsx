@@ -25,7 +25,7 @@ const useStyles = makeStyles({
         transform:'perspective(500px)',
         transformStyle:'preserve-3d',
         textAlign: 'center',
-        backgroundColor: '#C0BCFC',
+        backgroundColor: '#39C2A3',
         '&:hover': {
           transform: 'perspective(400px) rotateY(45deg)',
          
@@ -48,7 +48,7 @@ const useStyles = makeStyles({
 card2: {
   boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)',
   textAlign: 'center',
-  backgroundColor: '#929292',
+  backgroundColor: '#B75E73',
   padding: '2em',
   borderRadius:'1em',
   transform:'perspective(500px)',
@@ -91,13 +91,13 @@ return(
 <div className={classes.row} >
   <div className={classes.column}>
     <div className={classes.card}>
-      <li><a  className={classes.a} href='#' data-item=''>Home</a></li>
+      <li><a  className={classes.a} href='/' data-item=''>Home</a></li>
     </div>
   </div>
 
   <div className={classes.column}>
     <div className={classes.card1}> 
-    <li><a  className={classes.a} href='#' data-item=''>Hombres</a></li>
+    <li><a  className={classes.a} href='/hombres' data-item=''>Hombres</a></li>
      </div>
   </div>
   <div className={classes.column}>
